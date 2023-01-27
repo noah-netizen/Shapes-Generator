@@ -20,40 +20,41 @@
   // Function to generate random shapes
   function generateShapes(numShapes, shapeSize, shapeColors) {
     for (let i = 0; i < numShapes; i++) {
-      const x = Math.random() * 100;
-      const y = Math.random() * 100;
-      const color = shapeColors[Math.floor(Math.random() * shapeColors.length)];
-      
-      // Chat GPT showed me how to write this shortcut for the if statement
-      const shapeType = Math.random() < 0.5 ? "rectangle" : "circle";
-      const shape = document.createElement("div");
-      shape.style.position = "absolute";
-      shape.style.left = `${x}vw`;
-      shape.style.top = `${y}vh`;
-      shape.style.width = `${shapeSize}px`;
-      shape.style.height = `${shapeSize}px`;
-      shape.style.backgroundColor = color;
+      const x = Math.random() * 100
+      const y = Math.random() * 100
+      const color = shapeColors[Math.floor(Math.random() * shapeColors.length)]
+      // ChatGPT helped me write this shorhand IF function
+      const shapeType = Math.random() < 0.5 ? "rectangle" : "circle"
+      const shape = document.createElement("div")
+      shape.style.position = "absolute"
+      shape.style.left = `${x}vw`
+      shape.style.top = `${y}vh`
+      shape.style.width = `${shapeSize}px`
+      shape.style.height = `${shapeSize}px`
+      shape.style.backgroundColor = color
       if (shapeType === "circle") {
-        shape.style.borderRadius = "50%";
+        shape.style.borderRadius = "50%"
       }
-      Container.appendChild(shape);
+      Container.appendChild(shape)
     }
   }
+  
+	generateShapes(50, 80, ["red", "green", "yellow", "orange", "purple", "blue", "indigo", "violet"])
 
-  const colors = ["red", "green", "blue", "purple", "pink", "orange", "yellow", "indigo", "violet"];
+  // Colors for the shapes and background
+  const colors = ["red", "green", "blue", "purple", "pink", "orange", "yellow", "indigo", "violet"]
 
+  // Function to change background color
   function changeBackgroundColor() {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-
-    // Set the background-color property of the body element to the selected color
-    document.body.style.backgroundColor = randomColor;
+    const backgroundColor = colors[Math.floor(Math.random() * colors.length)]
+    document.body.style.backgroundColor = backgroundColor
   }
+  
+  changeBackgroundColor()
 
-  changeBackgroundColor();
-
-
-  // Generate shapes with parameters
-  generateShapes(50, 80, ["maroon", "green", "yellow", "orange", "purple"]);
-
+  // Auto-refresh website; seems to break my netnet though
+  // setTimeout(() => location.reload(), 10000);
+  
+  // Hide the scroll wheels
   document.body.style.overflow = "hidden"
 </script>
