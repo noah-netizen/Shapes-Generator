@@ -32,10 +32,18 @@
       shape.style.width = `${shapeSize}px`
       shape.style.height = `${shapeSize}px`
       shape.style.backgroundColor = color
+      shape.style.transform = "rotate(180deg) scale(1.5)";
+      shape.style.transition = "width 2s";
+    	shape.style.transition = "all 10s ease-in-out";
       if (shapeType === "circle") {
         shape.style.borderRadius = "50%"
       }
       Container.appendChild(shape)
+      shape.style.width = "50px";
+setTimeout(() => {
+    shape.style.width = "100px";
+}, 2000);
+
     }
   }
   
