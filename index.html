@@ -6,7 +6,6 @@
 </style>
 
 <script>
-  
   // Created a Container DIV element
   const Container = document.createElement("div");
   Container.id = "Container";
@@ -32,23 +31,22 @@
       shape.style.width = `${shapeSize}px`
       shape.style.height = `${shapeSize}px`
       shape.style.backgroundColor = color
-      shape.style.transform = "rotate(180deg) scale(1.5)";
-      shape.style.transition = "width 2s";
-    	shape.style.transition = "all 10s ease-in-out";
+      shape.style.transform = "rotate(160deg) scale(1.5)"
+      shape.style.transition = "width 5s"
+      shape.style.transition = "all 10s ease-in-out"
       if (shapeType === "circle") {
         shape.style.borderRadius = "50%"
       }
       Container.appendChild(shape)
-      shape.style.width = "50px";
-setTimeout(() => {
-    shape.style.width = "100px";
-}, 2000);
-
+      shape.style.width = "50px"
+      setTimeout(() => {
+        shape.style.width = "100px"
+      }, 2000)
     }
   }
-  
-	generateShapes(50, 80, ["red", "green", "yellow", "orange", "purple", "blue", "indigo", "violet"])
 
+  generateShapes(50, 80, ["red", "green", "yellow", "orange", "purple", "blue", "indigo", "violet"])
+  
   // Colors for the shapes and background
   const colors = ["red", "green", "blue", "purple", "pink", "orange", "yellow", "indigo", "violet"]
 
@@ -57,12 +55,12 @@ setTimeout(() => {
     const backgroundColor = colors[Math.floor(Math.random() * colors.length)]
     document.body.style.backgroundColor = backgroundColor
   }
-  
+
   changeBackgroundColor()
 
   // Auto-refresh website; seems to break my netnet though
   // setTimeout(() => location.reload(), 10000);
-  
+
   // Hide the scroll wheels
   document.body.style.overflow = "hidden"
 </script>
