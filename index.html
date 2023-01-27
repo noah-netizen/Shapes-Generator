@@ -1,24 +1,30 @@
 <body>
-
-  <div id="Container"></div>
-
 </body>
 
 <style>
-  #Container {
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-  }
+
 </style>
 
 <script>
+  
+  // Created a Container DIV element
+  const Container = document.createElement("div");
+  Container.id = "Container";
+  document.body.appendChild(Container);
+
+  // Added styles to the Container
+  Container.style.height = "100vh";
+  Container.style.width = "100vw";
+  Container.style.position = "relative";
+
+  // Function to generate random shapes
   function generateShapes(numShapes, shapeSize, shapeColors) {
-    const Container = document.getElementById("Container");
     for (let i = 0; i < numShapes; i++) {
       const x = Math.random() * 100;
       const y = Math.random() * 100;
       const color = shapeColors[Math.floor(Math.random() * shapeColors.length)];
+      
+      // Chat GPT showed me how to write this shortcut for the if statement
       const shapeType = Math.random() < 0.5 ? "rectangle" : "circle";
       const shape = document.createElement("div");
       shape.style.position = "absolute";
@@ -33,12 +39,21 @@
       Container.appendChild(shape);
     }
   }
-  generateShapes(50, 80, ["red", "green", "blue"]);
 
-//  setTimeout(() => {
-//  location.reload();
-// }, 5000);
+  const colors = ["red", "green", "blue", "purple", "pink", "orange", "yellow", "indigo", "violet"];
 
-  
+  function changeBackgroundColor() {
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+    // Set the background-color property of the body element to the selected color
+    document.body.style.backgroundColor = randomColor;
+  }
+
+  changeBackgroundColor();
+
+
+  // Generate shapes with parameters
+  generateShapes(50, 80, ["maroon", "green", "yellow", "orange", "purple"]);
+
   document.body.style.overflow = "hidden"
 </script>
